@@ -10,7 +10,7 @@ from sklearn.metrics import accuracy_score, classification_report
 
 # Read your CSV file and split it into train and test sets
 print("Preparing Dataset...\n")
-df = pd.read_csv('MHS_binaryclass.csv')
+df = pd.read_csv('HATEX_multiclass.csv')
 X = df['tweet']
 y = df['class']
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
@@ -20,7 +20,7 @@ print("Dataset preparation done!\n")
 print("Preparing Model...\n")
 model_name = "vinai/bertweet-base"
 tokenizer = AutoTokenizer.from_pretrained(model_name)
-model = BertForSequenceClassification.from_pretrained(model_name, num_labels=2)  # 2 labels (modify as needed)
+model = BertForSequenceClassification.from_pretrained(model_name, num_labels=3)  # 3 labels (modify as needed)
 print("Model preparation done!\n")
 # Tokenize and preprocess the text data
 
@@ -94,11 +94,11 @@ for epoch in range(num_epochs):
     # Save the best model checkpoint based on validation accuracy
     if val_accuracy > best_val_accuracy:
         best_val_accuracy = val_accuracy
-        torch.save(model.state_dict(), 'best_model_bertweet_MHS_binary.pt')
+        torch.save(model.state_dict(), 'best_model_bertweet_HATEX_multiclass.pt')
 
 
 # Load the best model checkpoint for testing
-model.load_state_dict(torch.load('best_model_bertweet_MHS_binary.pt'))
+model.load_state_dict(torch.load('best_model_bertweet_HATEX_multiclass.pt'))
 
 # Evaluation
 print("Evaluating...\n")
@@ -117,8 +117,8 @@ y_pred = np.array(y_pred)
 accuracy = accuracy_score(y_test, y_pred)
 report = classification_report(y_test, y_pred)
 
-print("\n----------------------")
-print("BerTweet - MHS Binary Class")
-print("----------------------\n")
+print("\n------------------------------")
+print("BerTweet - HATEX Multi Class")
+print("------------------------------\n")
 print(f"Accuracy: {accuracy}")
 print(f"Classification Report:\n{report}")

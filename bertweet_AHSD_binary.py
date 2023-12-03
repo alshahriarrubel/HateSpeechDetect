@@ -25,7 +25,7 @@ print("Model preparation done!\n")
 # Tokenize and preprocess the text data
 
 print("Tokenizing...\n")
-max_length = 32
+max_length = 64
 X_train_encoded = tokenizer(X_train.tolist(), truncation=True, padding=True, max_length=max_length, return_tensors='pt')
 X_test_encoded = tokenizer(X_test.tolist(), truncation=True, padding=True, max_length=max_length, return_tensors='pt')
 
@@ -117,8 +117,8 @@ y_pred = np.array(y_pred)
 accuracy = accuracy_score(y_test, y_pred)
 report = classification_report(y_test, y_pred)
 
-print("\n----------------------")
+print("\n----------------------------")
 print("BerTweet - AHSD Binary Class")
-print("----------------------\n")
+print("----------------------------\n")
 print(f"Accuracy: {accuracy}")
 print(f"Classification Report:\n{report}")
