@@ -1,5 +1,6 @@
-# HateSpeechDetect
-This project is for the final project of Natural Language Processing course. Special thanks to my teammates Ethan Oh and Fernando Fernando Vera Buschmann for their valuable contribution to this project. 
+# Hate Speech Detection
+This project is for the final project of Natural Language Processing course. The goal of this project is to show that the models trained on combined dataset can give us better generalization. 
+Special thanks to my teammates Ethan Oh and Fernando Vera Buschmann for their valuable contribution to this project. 
 we selected three datasets: AHSD, MHS and HATEX.
 For our experiment, we implement two models: BERT and BERTweet.
 
@@ -12,3 +13,7 @@ From each experiment, we saved the best models while training for 50 epochs and 
 ![multi](https://github.com/alshahriarrubel/HateSpeechDetect/assets/24860187/cd89e849-44ab-4843-b729-afa7f681e9d9)
 
 You will find more details about this work [here](https://github.com/onahte/hateDatasetStudy) when it will be publicly available.
+
+## How to Run
+* run .py files of BERT and BERTweet for both binary and multiclass with 4 datasets: AHSD, MHS, HATEX and Merged datasets. It will save the best models.
+* run 4 .py files on evaluatation of BERT and BERTweet for both binary and multiclass. 
