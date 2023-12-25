@@ -1,6 +1,6 @@
 # Hate Speech Detection
 This project is for the final project of Natural Language Processing course. The goal of this project is to show that the models trained on combined dataset can give us better generalization. 
-Special thanks to my teammates Ethan Oh and Fernando Vera Buschmann for their valuable contribution to this project. 
+* Special thanks to my teammates Ethan Oh and Fernando Vera Buschmann for their valuable contribution to this project. 
 we selected three datasets: AHSD, MHS and HATEX.
 For our experiment, we implement two models: BERT and BERTweet.
 
